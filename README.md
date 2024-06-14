@@ -30,7 +30,6 @@ Cette application de quiz de personnalité permet aux utilisateurs de découvrir
     cd backend
     npm install
 
-
 ## Usage
 
 ### Démarrage du serveur backend
