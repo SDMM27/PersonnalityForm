@@ -183,14 +183,3 @@ function attachThemeEventListeners() {
         });
     });
 }
-function reloadPage() {
-  const quizIntro = document.getElementById('quiz-intro');
-  const quizContainer = document.getElementById('quiz-container');
-  
-  if (quizIntro && quizContainer) {
-      quizContainer.style.display = 'none';
-      quizIntro.style.display = 'block';
-  } else {
-      window.location.reload(); // Fallback if elements are not found
-  }
-}
