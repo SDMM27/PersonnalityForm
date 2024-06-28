@@ -43,7 +43,7 @@ Le serveur sera démarré sur http://localhost:3000.
 
 
 ### Démarrage du frontend
-1. Ouvrez le fichier frontend/index.html dans votre navigateur pour commencer à utiliser l'application.
+1. Ouvrez le fichier frontend/welcome.html dans votre navigateur pour commencer à utiliser l'application.
 
 
 ## Structure du projet
