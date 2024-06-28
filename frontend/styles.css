@@ -1,32 +1,239 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif; /* Utilise la police Arial */
     text-align: center;
     background-color: #f0f0f0;
+    margin: 0;
 }
 
 header {
-    background-color: #008080;
+    background-color: #025A64;
     color: white;
     padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    position: relative; /* Pour positionner l'icône de maison */
+}
+header h1 {
+    display: inline-block;
+    margin: 0;
+}
+#home-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px; /* Ajustez cette valeur pour positionner l'icône */
+    transform: translateY(-50%);
+    color: white;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+#home-icon:hover {
+    color: #ccc;
+}
+
+main p {
+    font-size: 1.8em;
+    color: #03353E;
+    padding: 50px;
+    font-weight: bold;
 }
 
 .quiz-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes */
+    gap: 20px; /* Espace entre les éléments */
     justify-content: center;
-    margin: 20px 0;
+    align-items: center;
+    margin: 0 auto; /* Center the container */
+    width: fit-content; /* Ensure the grid is centered */
 }
+
+
 
 .quiz {
     background-color: white;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
+    border-radius: 8px;
     margin: 10px;
     padding: 20px;
     width: 200px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    text-align: left; /* Text aligned to the left */
+    font-weight: bold; /* Met tout le texte en gras */
+}
+
+.quiz-title {
+    color: #025A64;
+    font-size: 1em;
+    width: 100%; /* Ensures full width */
+    text-align: left; /* Text aligned to the left */
+    margin-bottom: 5px; /* Reducing space to center the quiz-type text vertically */
+}
+
+.quiz-type {
+    color: black;
+    font-size: 1.2em;
+    text-align: center; /* Center the quiz type text */
+    align-self: center; /* Center within the container */
+    flex-grow: 1; /* Takes available space to push itself to center */
 }
 
 .quiz:hover {
     background-color: #e0e0e0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
+#quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#quiz-title {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#quiz-subtitle {
+    color: #04060F;
+    margin-bottom: 20px;
+}
+
+#progress-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#progress-text {
+    color: white;
+    font-weight: bold;
+    background-color: #B20101;
+    padding: 10px 20px; /* Increased size */
+    border-radius: 5px;
+    height: 40px; /* Increased height */
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+#progress-container {
+    width: 80%;
+    background-color: rgba(90, 90, 90, 0.486);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative; /* For positioning the progress text */
+    height: 10px; /* Thinner bar */
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: #025A64;
+    width: 0%;
+}
+
+#question-container {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#question-container p {
+    color: black;
+    font-weight: bold;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.option {
+    background-color: white;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    font-weight: bold;
+}
+
+.option:hover {
+    background-color: #e0e0e0;
+}
+
+#navigation-buttons {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 600px; /* Align with options */
+    margin: 0 auto; /* Center the container */
+}
+
+#prev-button {
+    background-color: #025A64;
+    font-weight: bold;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+
+#result-title {
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+#result-character {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.result-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover; /* Pour s'assurer que l'image s'adapte bien à la taille */
+    margin-top: 10px;
+}
+
+#result-description {
+    color: black;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+#retry-button {
+    background-color: #025A64;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold; /* Mettre le texte en gras */
+    margin-top: 20px;
+    display: inline-block;
+}
+
+#retry-button:hover {
+    background-color: #014f58;
+}
+

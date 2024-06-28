@@ -5,20 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quel personnage es-tu ?</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Ajoutez ceci pour utiliser Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
     <header>
         <h1>Quel personnage es-tu ?</h1>
+        <!-- Icône de maison -->
+        <a href="#" onclick="reloadPage()" id="home-icon"><i class="fas fa-home"></i></a>
     </header>
     <main>
-        <p>Réalise l'un de ces quiz et trouve le personnage qui te correspond !!</p>
-        <div class="quiz-container">
-            <div class="quiz" onclick="startQuiz('sportif')">Sportif</div>
-            <div class="quiz" onclick="startQuiz('youtubeur')">Youtubeur</div>
-            <div class="quiz" onclick="startQuiz('chanteur')">Chanteur</div>
-            <div class="quiz" onclick="startQuiz('manga')">Manga</div>
-            <div class="quiz" onclick="startQuiz('films')">Films</div>
-            <div class="quiz" onclick="startQuiz('foot')">Foot</div>
+        <div id="quiz-intro">
+            <p id="intro-text">Réalise l'un de ces quiz et trouve le personnage qui te correspond !!</p>
+            <div class="quiz-container" id="quiz-selection">
+                <div class="quiz" data-quiz-type="sportif">
+                    <div class="quiz-title">Quiz</div>
+                    <div class="quiz-type">Sportif</div>
+                </div>
+                <div class="quiz" data-quiz-type="youtubeur">
+                    <div class="quiz-title">Quiz</div>
+                    <div class="quiz-type">Youtubeur</div>
+                </div>
+                <div class="quiz" data-quiz-type="chanteur">
+                    <div class="quiz-title">Quiz</div>
+                    <div class="quiz-type">Chanteur</div>
+                </div>
+                <div class="quiz" data-quiz-type="manga">
+                    <div class="quiz-title">Quiz</div>
+                    <div class="quiz-type">Manga</div>
+                </div>
+                <div class="quiz" data-quiz-type="films">
+                    <div class="quiz-title">Quiz</div>
+                    <div class="quiz-type">Films</div>
+                </div>
+                <div class="quiz" data-quiz-type="foot">
+                    <div class="quiz-title">Quiz</div>
+                    <div class="quiz-type">Foot</div>
+                </div>
+            </div>
+        </div>
+        <div id="quiz-container" style="display: none;">
+            <h2 id="quiz-subtitle"></h2>
+            <div id="progress-wrapper">
+                <div id="progress-text"></div>
+                <div id="progress-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+            <div id="question-container"></div>
+            <div id="navigation-buttons">
+                <button id="prev-button" onclick="prevQuestion()" style="display: none;">&lt; Précédent</button>
+            </div>
         </div>
     </main>
     <script src="scripts.js"></script>
